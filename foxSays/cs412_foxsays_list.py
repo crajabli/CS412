@@ -17,24 +17,22 @@ def main():
     num = int(input())
     animals = []
     sounds = []
-
+   
     for i in range(num):
         animalSound = input().split()
         animals.append((animalSound[0], animalSound[2]))
 
-    # filter out the foxSounds using the animals tuple list
-    sounds = filter(lambda x: x[1] not in animals, foxSounds)
-    sounds = list(sounds)
+    # filter out the foxSounds list using the animals tuple list
+    sounds = list(filter(lambda sound: all(sound != animal[1] for animal in animals), foxSounds))
+    animals = list(filter(lambda x: x[1] in foxSounds, animals))
+    
     print(sounds)
 
-    # for animal in animals:
-    #     if animal[1] in foxSounds:
-    #         foxSounds.remove(animal[1])
-
-    
-
     print(animals)
-    # print("%s \n %d" % (foxSounds, num))
+
+
+    print("what the fox says: %s" % " ".join(sounds))
+    print("animals: %s" % " ".join([x[0] for x in animals]))
     pass
 
 if __name__ == "__main__":
