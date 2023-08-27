@@ -26,7 +26,6 @@ def main():
     # filter out the foxSounds list using the animals dictionary
     sounds = list(filter(lambda sound: sound not in animals, fox_sounds))
     animals_uttered = list(filter(lambda animalsound: animalsound in fox_sounds, animals))
-
     for sound in animals_uttered:
         fake_animals.append(animals[sound])
     
