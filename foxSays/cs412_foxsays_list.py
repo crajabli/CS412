@@ -16,7 +16,7 @@ def main():
     fox_sounds = input().split()
     num = int(input())
     animals = []
-    sounds = []
+    faked_animals = []
    
     for i in range(num):
         animal_sound = input().split()
@@ -24,10 +24,15 @@ def main():
 
     # filter out the foxSounds list using the animals tuple list
     sounds = list(filter(lambda sound: all(sound != animal[1] for animal in animals), fox_sounds))
-    animals = [animal for animal in animals if animal[1]  in fox_sounds]
+    for sound in fox_sounds:
+        for animal in animals:
+            if sound == animal[1]:
+                faked_animals.append(animal[0])
+    # remove duplicates from faked_animals list
+    faked_animals = list(dict.fromkeys(faked_animals))
     
     print("what the fox says: %s" % " ".join(sounds))
-    print("also heard: %s" % " ".join([x[0] for x in animals]))
+    print("also heard: %s" % " ".join(faked_animals))
     
 
 if __name__ == "__main__":
