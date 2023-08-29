@@ -27,7 +27,7 @@ def main():
     animals = list(filter(lambda x: x[1] in fox_sounds, animals))
     
     print("what the fox says: %s" % " ".join(sounds))
-    print("animals: %s" % " ".join([x[0] for x in animals]))
+    print("also heard: %s" % " ".join([x[0] for x in animals]))
     
 
 if __name__ == "__main__":

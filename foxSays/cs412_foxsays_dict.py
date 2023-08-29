@@ -27,7 +27,7 @@ def main():
     animals_faked = list(dict.fromkeys(animals_faked))
     
     print("what the fox says: %s" % " ".join(sounds))
-    print("animals: %s" % " ".join(animals_faked))
+    print("also heard: %s" % " ".join(fake_animals))
 
 
 if __name__ == "__main__":
