@@ -24,7 +24,7 @@ def main():
 
     # filter out the foxSounds list using the animals tuple list
     sounds = list(filter(lambda sound: all(sound != animal[1] for animal in animals), fox_sounds))
-    animals = list(filter(lambda x: x[1] in fox_sounds, animals))
+    animals = [animal for animal in animals if animal[1]  in fox_sounds]
     
     print("what the fox says: %s" % " ".join(sounds))
     print("also heard: %s" % " ".join([x[0] for x in animals]))
