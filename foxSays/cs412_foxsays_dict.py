@@ -30,7 +30,7 @@ def main():
         fake_animals.append(animals[sound])
     
     print("what the fox says: %s" % " ".join(sounds))
-    print("animals: %s" % " ".join(fake_animals))
+    print("also heard: %s" % " ".join(fake_animals))
 
 
 if __name__ == "__main__":
