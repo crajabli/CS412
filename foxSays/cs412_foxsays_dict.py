@@ -16,21 +16,18 @@ def main():
     fox_sounds = input().split()
     num = int(input())
     animals = {}
-    sounds = []
-    fake_animals = []
    
     for i in range(num):
         animal_sound = input().split()
         animals[animal_sound[2]] = animal_sound[0]
 
     # filter out the foxSounds list using the animals dictionary
-    sounds = list(filter(lambda sound: sound not in animals, fox_sounds))
-    animals_uttered = list(filter(lambda animalsound: animalsound in fox_sounds, animals))
-    for sound in animals_uttered:
-        fake_animals.append(animals[sound])
+    sounds = [sound for sound in fox_sounds if sound not in animals]
+    animals_faked = [animals[sound] for sound in fox_sounds if sound in animals]
+    animals_faked = list(dict.fromkeys(animals_faked))
     
     print("what the fox says: %s" % " ".join(sounds))
-    print("animals: %s" % " ".join(fake_animals))
+    print("animals: %s" % " ".join(animals_faked))
 
 
 if __name__ == "__main__":
