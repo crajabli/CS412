@@ -28,7 +28,6 @@ def main():
         for animal in animals:
             if sound == animal[1]:
                 faked_animals.append(animal[0])
-    # remove duplicates from faked_animals list
     faked_animals = list(dict.fromkeys(faked_animals))
     
     print("what the fox says: %s" % " ".join(sounds))
