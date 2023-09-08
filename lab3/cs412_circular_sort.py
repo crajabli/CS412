@@ -10,6 +10,7 @@
            Comments here on your code and submission.
 """
 
+
 # All modules for CS 412 must include a main method that allows it
 # to imported and invoked from other python scripts
 def main():
@@ -17,21 +18,35 @@ def main():
     search_item = int(input())
     print(find(in_list, search_item))
 
+        
 
-def find (in_list, search_item):
-    middle = int (len(in_list) / 2)
+def find(in_list, search_item):
+    middle = int(len(in_list) / 2)
     
-    if in_list[middle] == search_item:
+    if (in_list[middle] == search_item):
         return middle
-    elif len(in_list) == 0:
-        return -1
-    else:
-        if in_list[middle] <= search_item and in_list[-1] >= search_item:
-            return find(in_list[middle : len(in_list)], search_item) + middle
+
+    if (middle - 1 >= 0 and in_list[middle - 1] == search_item):
+        return middle - 1
+    
+    if (middle + 1 < len(in_list) and in_list[middle + 1] == search_item):
+        return middle + 1
+
+    if (middle == 0 or len(in_list) <= 2):
+        return -1   
+    
+    if (in_list[middle + 1] < in_list[-1]):
+        if (search_item >= in_list[middle + 1] and search_item <= in_list[-1]):
+            result = find(in_list[middle:], search_item)
+            return -1 if result == -1 else middle + result 
         else:
-            return find(in_list[0: middle], search_item)
-    
-    
+            return find(in_list[:middle], search_item)
+    else:
+        if (search_item >= in_list[0] and search_item <= in_list[middle]):
+            return find(in_list[:middle], search_item)
+        else:
+            result = find(in_list[middle:], search_item)
+            return -1 if result == -1 else middle + result
 
 
 if __name__ == "__main__":
