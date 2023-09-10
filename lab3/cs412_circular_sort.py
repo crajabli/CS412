@@ -19,7 +19,6 @@ def main():
     print(find(in_list, search_item))
 
         
-
 def find(in_list, search_item):
     middle = int(len(in_list) / 2)
     
