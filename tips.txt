@@ -1,0 +1,40 @@
+What is the difference between a tuple and a list in Python?
+
+THink about thiscode 
+my_dict ={}
+my_list = (1,2,3,4)
+my_tuple = (1,2,3,4)
+my my_dict[my_list]= true is wrong never do this as dict is immutalbe whereas the list is mutable
+so just do my_dict[my_tuple]
+also never cast the list into the tuple igt defeats the whole purpose of the dict 
+
+BACKTRACKING
+base case and try everything
+
+
+Overlapping Subproblems
+is a characteristic of many problems that we know to solve
+a lot of wasted computation
+
+Memoization for fibonacci
+
+def RecFiboM(n):
+    if n == 0:
+        return 0
+    if n == 1:
+        return 1
+    else:
+        if F[n] is undefined
+            F[n] = RecFiboM(n - 1) + RecFiboM(n - 2)
+        return F[n]
+
+
+
+Log Cutting problem
+
+Given a price sheet with each possible log size (integer length). 
+Given a log of length d, what is the best way to cut the 
+long into pieces to maximize the total sales price?
+
+
+Base case:
