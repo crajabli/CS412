@@ -96,10 +96,11 @@
 # 2 of length 90
 # 0 of length 100
 # 4 rocket sections minimum
-def designRocket(sections, length, minimum):
+def build_rocket(sections, length, minimum):
     if (length % sections[-1] == 0):
         minimum[-1] = length // sections[-1]
         return minimum
+    
 
 
 
@@ -108,7 +109,9 @@ def main():
     length = int(input())
     print(rocket_section)
     print(length)
-    build_rocket(rocket_section, length)
+    minimum = [0] * len(rocket_section)
+    print (minimum)
+    build_rocket(rocket_section, length, minimum)
 
 
 if __name__ == '__main__':
