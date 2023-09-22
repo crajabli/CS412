@@ -38,8 +38,6 @@ def palindrome(word):
     return count_palindrome(0)
 
 
-
-
 def is_palindrome(word):
     return word == word[::-1]
     
