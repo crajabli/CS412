@@ -38,3 +38,42 @@ long into pieces to maximize the total sales price?
 
 
 Base case:
+
+
+
+HINTS for PART B
+
+use list for the part b 
+use a list to store the results 
+
+
+my_dict[key] = my_dict.get(key, 0) + 1
+
+
+Dynamic programming
+
+Fibonacci problem without recursion
+def iterFibo(n):
+    F = [0] * n
+    F[1] = 1
+
+    for i in range (2, n + 1):
+        F[i] = F[i-1] + F[i-2]
+
+    return F[n]
+
+Splittable Words
+
+def splittable_dynamic (A):
+    split_tble = [false] * len(A) + 1
+    split_tble[len(A)] = true
+
+    for i in range(len(A) - 1, -1, -1):
+        for j in range(i+1, len(A)+1):
+            if is_word(A[i:j]) and split_table[j]:
+
+
+
+
+
+
