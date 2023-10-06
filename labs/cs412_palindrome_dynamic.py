@@ -10,6 +10,7 @@
 
 # All modules for CS 412 must include a main method that allows it
 # to imported and invoked from other python scripts
+# the Big O of the algorithm is little less than O(n^2) as the second for loop would always get smaller
 
 
 def main():
@@ -20,22 +21,18 @@ def main():
 
 
 def palindrome(word):
-    length = len(word)
-    results = [None] * length
+    results = [0] * (len(word) + 1)
+    results[-1] = 1
 
-    def count_palindrome(index):
-        if index >= len(word) - 1:
-            return 1
+    for i in range(len(word) - 1, -1, -1):
+        for j in range(i + 1, len(word) + 1):
+            if is_palindrome(word[i:j]):
+                results[i] += results[j]
         
-        if results[index] is None:   
-            count = 0
-            for i in range(len(word) - index):
-                if is_palindrome(word[index:index + i + 1]):
-                    count += count_palindrome(index + i + 1)
-            results[index] = count
-        return results[index]
+    return results[0]
+
     
-    return count_palindrome(0)
+    
     
 
 def is_palindrome(word):

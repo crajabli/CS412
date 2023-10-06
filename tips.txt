@@ -64,13 +64,28 @@ def iterFibo(n):
 
 Splittable Words
 
-def splittable_dynamic (A):
-    split_tble = [false] * len(A) + 1
-    split_tble[len(A)] = true
+def splittable_dynamic(A):
+    split_table = [False] * (len(A)+1)
+    split_table[len(A)] = True
 
-    for i in range(len(A) - 1, -1, -1):
+    for i in range(len(A)-1, -1, -1):
         for j in range(i+1, len(A)+1):
             if is_word(A[i:j]) and split_table[j]:
+                    split_table[i] = True
+                    break
+return split_table[0]
+
+
+
+Greedy algoritym for Gale_Shapley Matching
+
+while h doesnt have an assignment:
+    for 1...d
+        if doctor has no job:
+            take that doctor
+        else:
+            if doctor rather be w/h
+                take doctor
 
 
 

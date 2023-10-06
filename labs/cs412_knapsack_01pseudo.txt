@@ -1,0 +1,19 @@
+ks(i, w) ---> return value
+
+like subset sum trying with the item or without to see if it will get the items we need
+
+0       if i==len(p)
+0       if W == 0
+-inf    if W < 0
+
+            with        v[i] + ks(i + 1, W - W[i])
+
+return  max   
+
+            without     0 + ks(i+1, W)
+
+-pseudo polynomial problem this is 
+-exponential time to solve this
+
+sort the list with price/ weight ratio
+add in the first one if it doesnt fit chop it off 
