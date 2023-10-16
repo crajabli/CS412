@@ -17,3 +17,16 @@ return  max
 
 sort the list with price/ weight ratio
 add in the first one if it doesnt fit chop it off 
+
+"""
+1. fractional knapsack problem is easier to solve as we just sort the items based on their weight
+to value ratio and then take as much as we can from the most valuable item and then move on to the next
+and if we cant fit it we just take the fraction of it as much as we can fit in the bag
+
+2.I dont think it would work correctly as in the 0/1 knapsack problem we are trying to maximize the value
+and we have cant just be greedy and take whatever has most value to weight ratio 
+
+3.lets say we just have 11 space ring 100 5 gold 50 10 silver 50 5
+in normal knap sack we would have taken ring and gold and in fractional we would have taken ring and gold and silver
+
+"""
