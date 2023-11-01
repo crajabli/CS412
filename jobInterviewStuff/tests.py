@@ -7,3 +7,12 @@ def fibonacci_recursive(n):
         return n
     else:
         return fibonacci_recursive(n-1) + fibonacci_recursive(n-2)
+
+def fibonacci_memoization(n):
+    if n <= 1:
+        return n 
+    else:
+        memo = [0, 1]
+        for i in range(2, n+1):
+            memo.append(memo[i-1] + memo[i-2])
+        return memo[n]
